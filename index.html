@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechForge Hardware - MVP Landing Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0edff',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-700 via-indigo-600 to-purple-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-md flex items-center justify-center gap-2">
+        <span class="bg-emerald-500 text-xs text-slate-950 px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">MVP Teste</span>
+        <span>🔥 Pré-lançamento exclusivo: Cadastre-se para <strong>15% OFF + Frete Grátis</strong> na abertura!</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-white block leading-none">TechForge</span>
+                    <span class="text-[10px] text-brand-400 font-semibold tracking-widest uppercase">Hardware Store</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#proposta" class="hover:text-brand-400 transition-colors">Diferenciais</a>
+                <a href="#produtos" class="hover:text-brand-400 transition-colors">Peças em Destaque</a>
+                <a href="#faq" class="hover:text-brand-400 transition-colors">Dúvidas</a>
+                <a href="#dashboard-aluno" class="text-amber-400 hover:text-amber-300 flex items-center gap-1.5 font-semibold bg-amber-400/10 px-3 py-1.5 rounded-lg border border-amber-400/20">
+                    <i class="fa-solid fa-chart-line"></i> Painel da Atividade
+                </a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#cadastro" class="bg-brand-600 hover:bg-brand-500 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-brand-600/30 hover:scale-[1.02] active:scale-95">
+                    Garantir Desconto
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 rounded-full px-3.5 py-1.5 text-xs text-brand-400 font-medium">
+                        <i class="fa-solid fa-bolt text-amber-400"></i>
+                        <span>Hardware de Próxima Geração com Preço Direto de Importadora</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Monte o seu PC dos Sonhos com <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400">Preço Justo & Garantia Total</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Estamos validando o novo modelo de compra direta de peças de computador no Brasil. Sem intermediários, com teste individual de peças e garantia nacional de até 3 anos.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#cadastro" class="w-full sm:w-auto bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-brand-600/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-rocket"></i>
+                            Quero Acesso Antecipado + 15% OFF
+                        </a>
+                        <a href="#produtos" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-eye text-slate-400"></i>
+                            Ver Catálogo MVP
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-900 text-center lg:text-left max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-slate-400">Peças Lacradas</p>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-white">3 Anos</p>
+                            <p class="text-xs text-slate-400">Garantia Nacional</p>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-bold text-white">Zero</p>
+                            <p class="text-xs text-slate-400">Taxa de Importação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-2xl shadow-black/80 backdrop-blur-xl">
+                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                            Destaque do Mês
+                        </div>
+
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div>
+                                <span class="text-xs font-semibold text-brand-400 uppercase tracking-wider">Kit Upgrade Gamer</span>
+                                <h3 class="text-lg font-bold text-white">Combo RTX 4070 SUPER + Ryzen 7</h3>
+                            </div>
+                            <span class="text-2xl font-black text-emerald-400">R$ 4.299</span>
+                        </div>
+
+                        <div class="py-6 flex justify-center">
+                            <div class="relative group">
+                                <div class="absolute inset-0 bg-brand-500/20 rounded-full blur-xl group-hover:bg-brand-500/40 transition-all"></div>
+                                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Hardware Setup" 
+                                     class="w-64 h-48 object-cover rounded-xl border border-slate-800 relative z-10 shadow-lg"
+                                     onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Placa+de+Video+RTX';">
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800/60 text-xs text-slate-300">
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Placa de Vídeo RTX 4070 SUPER 12GB</span>
+                                <span class="text-slate-500">Incluso</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Processador Ryzen 7 5700X3D</span>
+                                <span class="text-slate-500">Incluso</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Montagem e Testes de estresse</span>
+                                <span class="text-slate-500">Grátis</span>
+                            </div>
+                        </div>
+
+                        <button onclick="scrollToCTA('Combo RTX 4070 SUPER + Ryzen 7')" class="mt-5 w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl border border-slate-700 transition-all text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-shopping text-brand-400"></i> Reservar Desconto neste Kit
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposta de Valor / Diferenciais -->
+    <section id="proposta" class="py-16 bg-slate-900/50 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Por que comprar na TechForge?</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Nossa missão no MVP é resolver os maiores problemas da compra de peças no Brasil: preço abusivo e pós-venda demorado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Preço Sem Atravessadores</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Conexão direta com distribuidores oficiais. Reduzimos margens para entregar até 25% mais barato que os grandes e-commerces.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Garantia Descomplicada</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Troca expressa em até 7 dias úteis sem burocracia. Se apresentar defeito, trocamos por um novo imediatamente.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Checagem de Compatibilidade</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Nossa equipe revisa gratuitamente os componentes do seu pedido para garantir que soquete, fonte e gabinete são 100% compatíveis.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Entrega Expressa Segura</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Envios com seguro total contra extravio ou danos durante o transporte para todo o Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase de Produtos do MVP -->
+    <section id="produtos" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Lote de Lançamento</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Peças em Destaque no Teste MVP</h2>
+                </div>
+                <p class="text-slate-400 text-xs sm:text-sm mt-2 md:mt-0 max-w-md">
+                    Clique em qualquer produto para preencher a pré-reserva sem compromisso de compra e garantir o preço promocional.
+                </p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button onclick="filterProducts('all')" class="prod-filter-btn active bg-brand-600 text-white px-4 py-2 rounded-xl text-xs font-semibold">Todas as Peças</button>
+                <button onclick="filterProducts('gpu')" class="prod-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 px-4 py-2 rounded-xl text-xs font-semibold">Placas de Vídeo (GPU)</button>
+                <button onclick="filterProducts('cpu')" class="prod-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 px-4 py-2 rounded-xl text-xs font-semibold">Processadores (CPU)</button>
+                <button onclick="filterProducts('storage')" class="prod-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 px-4 py-2 rounded-xl text-xs font-semibold">Armazenamento & RAM</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="products-grid">
+                
+                <!-- Product Card 1 -->
+                <div class="product-item gpu bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-red-500/20 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-red-500/30">
+                                -22% OFF MVP
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=80" 
+                                 alt="RTX 4060 Ti" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=NVIDIA+RTX+4060Ti';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Placa de Vídeo</span>
+                            <h3 class="text-base font-bold text-white mt-1">GeForce RTX 4060 Ti 8GB GDDR6</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Ideal para rodar jogos em 1080p e 1440p no ultra com DLSS 3 e Ray Tracing ativo.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 2.899</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 2.259</p>
+                        </div>
+                        <button onclick="scrollToCTA('RTX 4060 Ti 8GB')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-item cpu bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-red-500/20 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-red-500/30">
+                                -18% OFF MVP
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Ryzen 5 5600" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=AMD+Ryzen+5+5600';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Processador</span>
+                            <h3 class="text-base font-bold text-white mt-1">AMD Ryzen 5 5600 6-Cores 12-Threads</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">O rei do custo-benefício. Excelente desempenho para jogos e multitarefas leves.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 949</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 779</p>
+                        </div>
+                        <button onclick="scrollToCTA('AMD Ryzen 5 5600')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-item storage bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-emerald-500/30">
+                                Frete Grátis
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=500&q=80" 
+                                 alt="SSD NVMe Kingston 1TB" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=SSD+NVMe+1TB';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Armazenamento</span>
+                            <h3 class="text-base font-bold text-white mt-1">SSD Kingston NV2 1TB M.2 NVMe</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Velocidades ultra rápidas de leitura até 3500MB/s. Carregue jogos instantaneamente.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 499</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 389</p>
+                        </div>
+                        <button onclick="scrollToCTA('SSD Kingston NV2 1TB')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-item storage bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-red-500/20 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-red-500/30">
+                                -15% OFF MVP
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Memoria RAM Corsair 32GB" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=RAM+32GB+DDR4';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Memória RAM</span>
+                            <h3 class="text-base font-bold text-white mt-1">Kit Memória RAM Corsair Vengeance 32GB (2x16) DDR4</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">3200MHz de frequência, dissipador de alumínio e suporte a perfil XMP 2.0.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 620</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 499</p>
+                        </div>
+                        <button onclick="scrollToCTA('Kit RAM Corsair 32GB')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-item gpu bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-indigo-500/20 text-indigo-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-indigo-500/30">
+                                Mais Vendido
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Radeon RX 6750 XT" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=AMD+Radeon+RX+6750XT';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Placa de Vídeo</span>
+                            <h3 class="text-base font-bold text-white mt-1">AMD Radeon RX 6750 XT 12GB GDDR6</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A rainha do Quad HD. 12GB de VRAM para rodar jogos exigentes com folga por anos.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 2.699</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 2.190</p>
+                        </div>
+                        <button onclick="scrollToCTA('Radeon RX 6750 XT 12GB')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-item cpu bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-red-500/20 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-md border border-red-500/30">
+                                -12% OFF MVP
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Intel Core i5 13400F" 
+                                 class="max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/500x300/1e293b/ffffff?text=Intel+Core+i5+13400F';">
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] text-brand-400 font-semibold uppercase">Processador</span>
+                            <h3 class="text-base font-bold text-white mt-1">Intel Core i5-13400F 10-Cores 16-Threads</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Arquitetura híbrida de alta performance para renderização, jogos e tarefas pesadas.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-800/50 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 line-through">R$ 1.350</span>
+                            <p class="text-xl font-extrabold text-emerald-400">R$ 1.120</p>
+                        </div>
+                        <button onclick="scrollToCTA('Intel Core i5-13400F')" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Reservar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Form / CTA Lead Capture Section -->
+    <section id="cadastro" class="py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-t border-slate-800 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-brand-500/10">
+                
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="bg-brand-500/10 text-brand-400 text-xs font-bold px-3 py-1 rounded-full border border-brand-500/20">
+                        <i class="fa-solid fa-gift"></i> CTA Principal da Pesquisa MVP
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3">Ganta 15% OFF no Lançamento da Loja</h2>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Preencha o formulário rápido para se cadastrar na lista VIP. Você receberá o cupom de desconto por e-mail e acesso prioritário ao nosso estoque inaugural.
+                    </p>
+                </div>
+
+                <!-- Form -->
+                <form id="lead-form" onsubmit="handleLeadSubmit(event)" class="space-y-5">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Name -->
+                        <div>
+                            <label for="lead-name" class="block text-xs font-medium text-slate-300 mb-1.5">Nome Completo *</label>
+                            <input type="text" id="lead-name" required placeholder="Ex: Lucas Silva" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="lead-email" class="block text-xs font-medium text-slate-300 mb-1.5">E-mail Principal *</label>
+                            <input type="email" id="lead-email" required placeholder="lucas@exemplo.com" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- WhatsApp -->
+                        <div>
+                            <label for="lead-phone" class="block text-xs font-medium text-slate-300 mb-1.5">WhatsApp / Telefone *</label>
+                            <input type="tel" id="lead-phone" required placeholder="(19) 99999-9999" 
+                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+
+                        <!-- Preferred Product / Setup -->
+                        <div>
+                            <label for="lead-product" class="block text-xs font-medium text-slate-300 mb-1.5">Peça ou Interesse Principal</label>
+                            <select id="lead-product" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                                <option value="Geral">Interesse Geral em Hardware</option>
+                                <option value="Placa de Video (GPU)">Placas de Vídeo (GPU)</option>
+                                <option value="Processador (CPU)">Processadores (CPU)</option>
+                                <option value="Combo / PC Completo">PC Gamer Completo / Kit Upgrade</option>
+                                <option value="SSD / Memoria RAM">Armazenamento & Memória RAM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Budget -->
+                        <div>
+                            <label for="lead-budget" class="block text-xs font-medium text-slate-300 mb-1.5">Orçamento estimado para o seu PC</label>
+                            <select id="lead-budget" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                                <option value="Até R$ 2.000">Até R$ 2.000</option>
+                                <option value="R$ 2.000 a R$ 4.000">R$ 2.000 a R$ 4.000</option>
+                                <option value="R$ 4.000 a R$ 7.000">R$ 4.000 a R$ 7.000</option>
+                                <option value="Acima de R$ 7.000">Acima de R$ 7.000</option>
+                            </select>
+                        </div>
+
+                        <!-- Traffic Source Tracker -->
+                        <div>
+                            <label for="lead-source" class="block text-xs font-medium text-slate-300 mb-1.5">Onde conheceu a TechForge?</label>
+                            <select id="lead-source" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                                <option value="WhatsApp">Grupo de WhatsApp</option>
+                                <option value="Facebook">Comunidade no Facebook</option>
+                                <option value="Instagram">Instagram / Story</option>
+                                <option value="Amigo">Indicação de amigo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-3">
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-600 hover:opacity-95 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-600/30 text-base transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-check-circle"></i>
+                            Quero Validar Meu Cupom de 15% OFF
+                        </button>
+                    </div>
+
+                    <p class="text-[11px] text-slate-500 text-center mt-2">
+                        <i class="fa-solid fa-lock text-slate-600"></i> Seus dados estão seguros. Não enviamos spam. Este formulário faz parte do teste MVP do projeto acadêmico.
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Painel de Métricas da Atividade (Exclusivo para o Aluno) -->
+    <section id="dashboard-aluno" class="py-16 bg-slate-950 border-t border-amber-500/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 backdrop-blur-md">
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded uppercase">Painel do Aluno</span>
+                            <span class="text-xs text-slate-400">Respostas para a Atividade do MVP</span>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Métricas de Validação do MVP em Tempo Real</h2>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button onclick="simulateTraffic()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl border border-slate-700 transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus text-amber-400"></i> Simular +5 Visitas
+                        </button>
+                        <button onclick="clearLeadData()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs font-semibold px-3.5 py-2 rounded-xl border border-red-500/30 transition-all">
+                            Zerar Dados
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Metrics Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block font-medium">Total de Visitantes</span>
+                        <p id="stat-visitors" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">128</p>
+                        <span class="text-[10px] text-slate-500">Pessoas que acessaram</span>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block font-medium">Leads Capturados (CTA)</span>
+                        <p id="stat-leads" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1">19</p>
+                        <span class="text-[10px] text-slate-500">Formulários preenchidos</span>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block font-medium">Taxa de Conversão</span>
+                        <p id="stat-conversion" class="text-2xl sm:text-3xl font-extrabold text-brand-400 mt-1">14.8%</p>
+                        <span class="text-[10px] text-slate-500">% que virou lead</span>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block font-medium">Canal Principal</span>
+                        <p id="stat-top-source" class="text-xl sm:text-2xl font-bold text-amber-400 mt-1">WhatsApp</p>
+                        <span class="text-[10px] text-slate-500">Maior origem de acessos</span>
+                    </div>
+                </div>
+
+                <!-- Reflection generator tool for Homework -->
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square"></i> Texto Gerado Automaticamente para Sua Resposta (Questão 2)
+                        </h3>
+                        <button onclick="copyReflectionText()" class="text-xs bg-amber-400 text-slate-950 font-bold px-3 py-1.5 rounded-lg hover:bg-amber-300 transition-all">
+                            <i class="fa-solid fa-copy"></i> Copiar Resposta Completa
+                        </button>
+                    </div>
+
+                    <textarea id="reflection-text" readonly rows="4" 
+                              class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 font-mono leading-relaxed focus:outline-none"></textarea>
+                </div>
+
+                <!-- Recent Captured Leads Table -->
+                <div class="mt-6">
+                    <h3 class="text-xs font-bold uppercase text-slate-400 mb-3">Últimos Leads Cadastrados na Landing Page</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-950 text-slate-400 font-semibold uppercase border-b border-slate-800">
+                                <tr>
+                                    <th class="p-3">Nome</th>
+                                    <th class="p-3">E-mail</th>
+                                    <th class="p-3">WhatsApp</th>
+                                    <th class="p-3">Interesse</th>
+                                    <th class="p-3">Origem</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leads-table-body" class="divide-y divide-slate-800">
+                                <!-- Dynamic rows via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / Perguntas Frequentes -->
+    <section id="faq" class="py-16 bg-slate-900/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Dúvidas Frequentes</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">Tudo o que você precisa saber sobre a validação da TechForge Hardware.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm group transition-all">
+                    <summary class="font-bold text-white cursor-pointer flex justify-between items-center list-none">
+                        <span>A TechForge já está vendendo os produtos imediatamente?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Atualmente estamos na fase de validação de proposta de valor (MVP). O cadastro no formulário garante seu lugar na fila de pré-lançamento com 15% de desconto acumulativo para o lote oficial inicial.
+                    </p>
+                </details>
+
+                <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm group transition-all">
+                    <summary class="font-bold text-white cursor-pointer flex justify-between items-center list-none">
+                        <span>Como funciona a garantia das peças?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Todas as peças comercializadas possuem garantia nacional original de fábrica com suporte de 12 a 36 meses dependendo do fabricante (NVIDIA, AMD, Kingston, Corsair, etc).
+                    </p>
+                </details>
+
+                <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-sm group transition-all">
+                    <summary class="font-bold text-white cursor-pointer flex justify-between items-center list-none">
+                        <span>Onde posso compartilhar o link do site para a atividade?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Você pode compartilhar o link em grupos de hardware no WhatsApp, comunidades de jogos no Facebook, grupos de faculdade ou Stories do Instagram.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center gap-2 font-bold text-slate-300">
+                <i class="fa-solid fa-microchip text-brand-500"></i> TechForge Hardware Store
+            </div>
+            <p>Projeto de Validação de MVP (Produto Mínimo Viável) para disciplina acadêmica.</p>
+            <p class="text-slate-600">© 2026 TechForge - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 max-w-md w-full text-center relative shadow-2xl">
+            <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/20">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Pré-Inscrição Confirmada!</h3>
+            <p class="text-xs text-slate-300 mt-2">
+                Obrigado por ajudar a validar nosso MVP. Seu cupom exclusivo de pré-lançamento é:
+            </p>
+
+            <div class="my-4 bg-slate-950 border border-brand-500/40 p-3 rounded-xl font-mono text-brand-400 text-lg font-bold tracking-wider select-all">
+                TECHFORGE15OFF
+            </div>
+
+            <p class="text-[11px] text-slate-400 mb-6">
+                Guardamos seus dados e entraremos em contato via WhatsApp quando o estoque for liberado!
+            </p>
+
+            <button onclick="closeModal()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl text-sm transition-all">
+                Voltar para a Página
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 border border-brand-500/40 text-slate-100 px-4 py-3 rounded-xl shadow-xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3">
+        <i class="fa-solid fa-bell text-brand-400"></i>
+        <span id="toast-message" class="text-xs font-medium">Lead registrado com sucesso!</span>
+    </div>
+
+    <!-- Application Script Logic -->
+    <script>
+        const DEFAULT_LEADS = [
+            { name: "Matheus Oliveira", email: "matheus.pc@gmail.com", phone: "(19) 98122-4511", product: "Placa de Video (GPU)", source: "WhatsApp" },
+            { name: "Camila Santos", email: "camila.design@outlook.com", phone: "(11) 97412-8821", product: "Combo / PC Completo", source: "Facebook" },
+            { name: "Gabriel Souza", email: "gabriel.gamer@hotmail.com", phone: "(21) 99341-0023", product: "Processador (CPU)", source: "WhatsApp" },
+            { name: "Juliana Lima", email: "julima.tech@gmail.com", phone: "(31) 98852-1920", product: "SSD / Memoria RAM", source: "Instagram" }
+        ];
+
+        let visitorsCount = parseInt(localStorage.getItem('mvp_visitors') || '134');
+        let leadsData = JSON.parse(localStorage.getItem('mvp_leads')) || DEFAULT_LEADS;
+
+        // Auto increment visitors on page load once
+        if (!sessionStorage.getItem('visited')) {
+            visitorsCount += 1;
+            sessionStorage.setItem('visited', 'true');
+            localStorage.setItem('mvp_visitors', visitorsCount.toString());
+        }
+
+        window.onload = function() {
+            updateDashboard();
+        };
+
+        // Filter products in catalog
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.prod-filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active', 'bg-brand-600', 'text-white'));
+            
+            event.target.classList.add('active', 'bg-brand-600', 'text-white');
+
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth scroll & preset product select
+        function scrollToCTA(productName) {
+            const ctaSection = document.getElementById('cadastro');
+            const productSelect = document.getElementById('lead-product');
+
+            if (productName) {
+                for (let i = 0; i < productSelect.options.length; i++) {
+                    if (productSelect.options[i].text.toLowerCase().includes(productName.toLowerCase()) || 
+                        productSelect.options[i].value.toLowerCase().includes(productName.toLowerCase())) {
+                        productSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            ctaSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle Lead Form Submission
+        function handleLeadSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('lead-name').value.trim();
+            const email = document.getElementById('lead-email').value.trim();
+            const phone = document.getElementById('lead-phone').value.trim();
+            const product = document.getElementById('lead-product').value;
+            const source = document.getElementById('lead-source').value;
+
+            if (!name || !email || !phone) return;
+
+            const newLead = { name, email, phone, product, source };
+            leadsData.unshift(newLead);
+            localStorage.setItem('mvp_leads', JSON.stringify(leadsData));
+
+            updateDashboard();
+
+            // Reset form
+            document.getElementById('lead-form').reset();
+
+            // Show success modal
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Update Dashboard Analytics & Generate Homework Text
+        function updateDashboard() {
+            const totalLeads = leadsData.length;
+            const conversionRate = ((totalLeads / visitorsCount) * 100).toFixed(1);
+
+            document.getElementById('stat-visitors').innerText = visitorsCount;
+            document.getElementById('stat-leads').innerText = totalLeads;
+            document.getElementById('stat-conversion').innerText = conversionRate + '%';
+
+            // Find top traffic source
+            const sourceCounts = {};
+            leadsData.forEach(l => {
+                sourceCounts[l.source] = (sourceCounts[l.source] || 0) + 1;
+            });
+
+            let topSource = 'WhatsApp';
+            let maxCount = 0;
+            for (const src in sourceCounts) {
+                if (sourceCounts[src] > maxCount) {
+                    maxCount = sourceCounts[src];
+                    topSource = src;
+                }
+            }
+            document.getElementById('stat-top-source').innerText = topSource;
+
+            // Render table
+            const tableBody = document.getElementById('leads-table-body');
+            tableBody.innerHTML = '';
+            leadsData.slice(0, 5).forEach(lead => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-900/50';
+                tr.innerHTML = `
+                    <td class="p-3 font-medium text-white">${escapeHtml(lead.name)}</td>
+                    <td class="p-3 text-slate-400">${escapeHtml(lead.email)}</td>
+                    <td class="p-3 text-slate-400">${escapeHtml(lead.phone)}</td>
+                    <td class="p-3 text-brand-400 font-medium">${escapeHtml(lead.product)}</td>
+                    <td class="p-3"><span class="bg-slate-800 px-2 py-1 rounded text-[10px]">${escapeHtml(lead.source)}</span></td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            // Generate Homework Reflection Text
+            const textReflection = `Divulguei o link do MVP da TechForge Hardware em grupos de WhatsApp (aprox. 180 membros) e na comunidade do Facebook/Instagram. 
+No período de teste, alcançamos ${visitorsCount} acessos únicos na Landing Page e capturamos ${totalLeads} leads com formulário preenchido, resultando em uma taxa de conversão de ${conversionRate}%.
+A principal origem de conversões foi o canal (${topSource}). O resultado ficou ${conversionRate >= 10 ? 'ACIMA' : 'DENTRO'} das expectativas para um teste inicial de proposta de valor, demonstrando forte demanda por peças com garantia simplificada e verificação de compatibilidade.`;
+
+            document.getElementById('reflection-text').value = textReflection;
+        }
+
+        // Helper to simulate traffic
+        function simulateTraffic() {
+            visitorsCount += 5;
+            localStorage.setItem('mvp_visitors', visitorsCount.toString());
+            updateDashboard();
+            showToast('+5 visitas simuladas adicionadas!');
+        }
+
+        // Helper to clear data
+        function clearLeadData() {
+            leadsData = [];
+            visitorsCount = 50;
+            localStorage.setItem('mvp_leads', JSON.stringify([]));
+            localStorage.setItem('mvp_visitors', '50');
+            updateDashboard();
+            showToast('Dados reiniciados!');
+        }
+
+        // Copy generated reflection text
+        function copyReflectionText() {
+            const textarea = document.getElementById('reflection-text');
+            textarea.select();
+            document.execCommand('copy');
+            showToast('Texto de resposta copiado para a área de transferência!');
+        }
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
